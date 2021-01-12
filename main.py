@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 class Circles(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui')
+        uic.loadUi('UI.ui', self)
         self.do_paint = False
         self.btn_run.clicked.connect(self.paint)
 
@@ -27,7 +27,7 @@ class Circles(QMainWindow):
     def draw_circle(self, qp):
         radius = randint(1, 270)
         qp.setPen(QColor(255, 255, 0))
-        qp.drawRect(300 - radius, 270 - radius, radius, radius)
+        qp.drawEllipse(300 - radius, 270 - radius, radius, radius)
 
 
 if __name__ == '__main__':
