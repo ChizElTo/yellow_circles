@@ -25,8 +25,9 @@ class Circles(QMainWindow):
         self.repaint()
 
     def draw_circle(self, qp):
-        qp.setPen(QColor(255, 0, 0))
-        qp.drawRect(0, 0, 120, 30)
+        radius = randint(1, 270)
+        qp.setPen(QColor(255, 255, 0))
+        qp.drawRect(300 - radius, 270 - radius, radius, radius)
 
 
 if __name__ == '__main__':
