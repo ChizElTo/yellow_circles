@@ -11,6 +11,7 @@ class Circles(QMainWindow):
         super().__init__()
         uic.loadUi('UI.ui', self)
         self.do_paint = False
+        self.setStyleSheet("QMainWindow {background: 'grey';}")
         self.btn_run.clicked.connect(self.paint)
 
     def paintEvent(self, event):
@@ -25,9 +26,9 @@ class Circles(QMainWindow):
         self.repaint()
 
     def draw_circle(self, qp):
-        radius = randint(1, 270)
+        radius = randint(1, 540)
         qp.setPen(QColor(255, 255, 0))
-        qp.drawEllipse(300 - radius, 270 - radius, radius, radius)
+        qp.drawEllipse(300 - radius // 2, 270 - radius // 2, radius, radius)
 
 
 if __name__ == '__main__':
